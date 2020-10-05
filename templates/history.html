@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <div class="container pt-5">
+        <div class="row">
+
+        <h1>Prediction History</h1>
+
+            <table class="table">
+                <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Sepal length</th>
+                <th scope="col">Sepal width</th>
+                <th scope="col">Petal length</th>
+                <th scope="col">Petal width</th>
+                <th scope="col">Prediction</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for entry in data %}
+                    <tr>
+                    <th scope="row">{{ entry.id }}</th>
+                    <td>{{ entry.sepal_length }}</td>
+                    <td>{{ entry.sepal_width }}</td>
+                    <td>{{ entry.petal_length }}</td>
+                    <td>{{ entry.petal_width }}</td>
+                    <td>{{ entry.prediction }}</td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
